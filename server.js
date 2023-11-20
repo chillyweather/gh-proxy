@@ -1,7 +1,10 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
+const fetch = require("node-fetch");
+const cors = require("cors"); // Add this line
 const app = express();
 
+app.use(cors()); // Add this line
 app.use(express.json());
 
 const githubToken = process.env.FEEDBACK_TOKEN;
